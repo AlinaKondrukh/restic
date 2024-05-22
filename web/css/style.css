@@ -2,3 +2,52 @@
   font-size: 1.5em !important;
   font-weight: 100 !important;
 }
+.regis {
+  font-size: 1.5em !important;
+  font-weight: bold !important;
+}
+.logo {
+  height: 50px;
+  width: auto;
+}
+.bg-dark {
+  background-color: rgb(91, 151, 11) !important;
+  justify-content: center !important;
+}
+.bg-light {
+  background-color: rgb(80, 95, 60) !important;
+  justify-content: center !important;
+}
+.center {
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+.preim {
+  align-items: center !important;
+  text-align: center !important;
+  justify-content: center !important;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 50px 0 !important;
+}
+  .lol {
+    margin-top: 50px !important;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+  .btn-success {
+    border: none !important;
+    background-color:  rgb(91, 151, 11) !important;
+  }
+  .btn-success:hover, .btn-success:focus, .btn-success:active {
+    border: none !important;
+    background-color:  rgb(80, 95, 60) !important;
+  }
+  a {
+    color: rgb(91, 151, 11);
+  }
+  .none {
+    list-style: none;
+  }

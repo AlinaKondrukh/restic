@@ -45,11 +45,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?php ActiveForm::end(); ?>
 
-            <div>
-                <h2 class="register">Зарегистрируйтесь, если у вас ещё нет аккаунта</h2>
-                <a href="./create.php" class="nav-link"><button class="btn btn-primary">Регистрация</button></a>
-            </div>
-
         </div>
     </div>
 </div>

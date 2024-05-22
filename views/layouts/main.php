@@ -9,6 +9,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use app\models\User;
 
 AppAsset::register($this);
 
@@ -33,7 +34,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <header id="header">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Html::img('@web/images/logo.png', ['alt'=>'Логотип', 'class'=>'logo']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
     ]);
@@ -41,8 +42,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'Регистрация', 'url' => ['/site/register']],
-            ['label' => 'Контакты', 'url' => ['/site/contact']],
+            Yii::$app->user->isGuest || !Yii::$app->user->identity->isAdmin()
+                ? ['label' => 'Контакты', 'url' => ['/site/contact']]
+                : '',
+            Yii::$app->user->isGuest
+                ? ['label' => 'Регистрация', 'url' => ['/site/register']]
+                : ['label' => 'Бронирование', 'url' => ['/bookings/index']],
+            (!Yii::$app->user->isGuest && !Yii::$app->user->identity->isAdmin())
+                ? ['label' => 'Создать бронь', 'url' => ['/bookings/create']]
+                : '', 
+                
             Yii::$app->user->isGuest
                 ? ['label' => 'Вход', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
@@ -52,7 +61,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         ['class' => 'nav-link btn btn-link logout']
                     )
                     . Html::endForm()
-                    . '</li>'
+                    . '</li>',
+            
         ]
     ]);
     NavBar::end();
@@ -60,7 +70,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </header>
 
 <main id="main" class="flex-shrink-0" role="main">
-    <div class="container">
+    <div class="container lol">
         <?php if (!empty($this->params['breadcrumbs'])): ?>
             <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]) ?>
         <?php endif ?>
@@ -72,8 +82,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <footer id="footer" class="mt-auto py-3 bg-light">
     <div class="container">
         <div class="row text-muted">
-            <div class="col-md-6 text-center text-md-start">&copy; My Company <?= date('Y') ?></div>
-            <div class="col-md-6 text-center text-md-end"><?= Yii::powered() ?></div>
+            <div class="col-md-6 text-center text-md-start">&copy; Рестик <?= date('Y') ?></div>
+            <div class="col-md-6 text-center text-md-end">
+                <span>Контактные данные: </span>
+                <ul class='none'>
+                    <li><u>Адрес:</u> набережная канала Грибоедова, 5</li>
+                    <li><u>Телефон:</u> +7 (333) 020 88 77</li>
+                    <li><u>Почта:</u> support@restik.net</li>
+                </ul>
+            </div>
         </div>
     </div>
 </footer>

@@ -3,12 +3,12 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var app\models\User $model */
+/** @var app\models\Bookings $model */
 
-$this->title = 'Регистрация';
+$this->title = 'Добавить заказ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-create">
+<div class="bookings-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

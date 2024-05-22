@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use app\models\Roles;
 /**
  * This is the model class for table "users".
  *
@@ -52,10 +52,21 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'surname' => 'Фамилия',
             'email' => 'Email',
             'password' => 'Пароль',
-            'role_id' => 'Role ID',
+            'password_confirmation' => 'Повторите пароль',
         ];
     }
-
+    public function __toString()
+    {
+        return $this->email;
+    }
+    public static function getInstance() : User|null
+    {
+        return Yii::$app->user->identity;
+    }
+    public function isAdmin() 
+    {
+        return $this->role_id == Roles::admin_role_id;
+    }
     /**
      * Gets query for [[Bookings]].
      *

@@ -2,52 +2,48 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'My Yii Application';
+$this->title = 'Рестик';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron text-center bg-transparent mt-5 mb-5">
-        <h1 class="display-4">Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
+    <div class="row featurette">
+      <div class="col-md-7">
+      <h1 class="preim">О нас</h1>
+        <p class="lead">Сайт является платформой для бронирования столов ресторана “Рестик”. Люди из любого места могут выбрать подходящий столик и время для встречи. .</p>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="/web/images/5.jpg">
+      </div>
     </div>
 
-    <div class="body-content">
+    <hr class="featurette-divider">
 
-        <div class="row">
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
+  <div class="container marketing">
+ <h1 class="preim">Наши преимущества</h1>
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4 center">
+        <img class="bd-placeholder-img" width="300" height="200" src="/web/images/1.jpg">
+        <p>Забронировав столик вы всегда сможете рассчитывать на то, что он будет свободен ко времени, указанному в брони</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4 center">
+      <img class="bd-placeholder-img" width="300" height="200" src="/web/images/2.jpg">
+        <p>Мы следим, чтобы наши клиенты оставались счастливы</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4 center">
+      <img class="bd-placeholder-img" width="300" height="200" src="/web/images/6.jpg">
+        <p>Мы понимаем, что вы хотите выбрать конкретное место, поэтому даем вам право выбрать столик.</p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+    <!-- START THE FEATURETTES -->
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+    <hr class="featurette-divider">
 
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
 
-    </div>
+  </div><!-- /.container -->
+
 </div>

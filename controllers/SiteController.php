@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Roles;
+use app\models\UserRegister;
 
 class SiteController extends Controller
 {
@@ -130,14 +132,16 @@ class SiteController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    public function actionRegister()
     {
-        $model = new User();
+        $model = new UserRegister();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
+            if ($model->load($this->request->post())) {
+                $model->role_id = Roles::user_role_id;
+                if ($model->save()) {
+                    return $this->redirect('login');
+                }}
         } else {
             $model->loadDefaultValues();
         }
